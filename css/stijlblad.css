@@ -1,0 +1,132 @@
+@import url("normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --hoofdkleur-1: hsl(217, 54%, 11%);
+  --hoofdkleur-2: hsl(216, 50%, 16%);
+  --hoofdkleur-3: hsl(215, 32%, 27%);
+
+  --tekst-wit: hsl(0, 0%, 100%);
+  --tekst-softblue: hsl(215, 51%, 70%);
+  --tekst-cyan: hsl(178, 100%, 50%);
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--hoofdkleur-1);
+  color: var(--tekst-softblue);
+  font-size: 1.125rem;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+main {
+  padding: 0.8rem;
+  border-radius: 2rem;
+  /** Als we een display grid in the parent zetten met **/
+  /* align-content: center en justify-content: center; **/
+  /** dan valt of staat alles afhankelijk van een      **/
+  /** grootte die gegeven wordt aan het eerste child   **/
+  max-width: 395px;
+}
+
+.product {
+  background-color: var(--hoofdkleur-2);
+  margin: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 1rem;
+}
+.product-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 1.5rem 0;
+  background-color: var(--tekst-cyan);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.picture-image {
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--tekst-cyan);
+}
+
+.middle {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.product-image:hover .middle {
+  opacity: 1;
+}
+.picture-img:hover {
+  opacity: 0.4;
+}
+.product-content {
+  margin: 1rem;
+}
+.product-title {
+  font-size: larger;
+  padding: 8px;
+  color: var(--tekst-wit);
+  font-weight: 600;
+}
+.product-text {
+  line-height: 1.5rem;
+  font-size: 500;
+  padding: 8px;
+}
+
+.flex-group {
+  font-size: smaller;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.flex-item-1 {
+  font-weight: 600;
+  color: var(--tekst-cyan);
+}
+.flex-item-2 {
+  font-weight: 300;
+}
+.flex-item-1::before {
+  content: url("../images/icon-ethereum.svg");
+  padding-right: 8px;
+  vertical-align: middle;
+}
+.flex-item-2::before {
+  content: url("../images/icon-clock.svg");
+  padding-right: 8px;
+  vertical-align: middle;
+}
+.lijn {
+  border-bottom: solid 1px var(--hoofdkleur-3);
+  margin: 1em 0;
+}
+.gezicht {
+  font-size: smaller;
+}
+.gezicht > span {
+  color: var(--tekst-wit);
+}
+.gezicht::before {
+  content: "";
+  display: inline-block;
+  width: 2.3em; /* set the desired width */
+  height: 2.3em; /* set the desired height */
+  background-image: url("../images/image-avatar.png"); /* set the image path */
+  background-size: cover; /* or contain, depending on how you want to resize the image */
+  border: 1px white solid;
+  border-radius: 50%;
+  margin-right: 16px;
+  vertical-align: middle;
+}
+.zweven:hover {
+  cursor: pointer;
+  color: var(--tekst-cyan);
+}
